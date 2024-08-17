@@ -12,6 +12,8 @@ public class TileControls : MonoBehaviour
 
     private bool MovingDown;
 
+    public bool grounded;
+
     public float PreviousTime;
     public float PreviousInputTime;
 
@@ -76,7 +78,7 @@ public class TileControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && grounded == false)
         {
             transform.position += new Vector3(1, 0, 0);
 
@@ -86,7 +88,7 @@ public class TileControls : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A) && grounded == false)
         {
             transform.position += new Vector3(-1, 0, 0);
 
@@ -97,7 +99,7 @@ public class TileControls : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKeyDown(KeyCode.Q) && grounded == false)
         {
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
             if(!ValidMove())
@@ -121,6 +123,8 @@ public class TileControls : MonoBehaviour
                 transform.position -= new Vector3(0, -1, 0);
                 AddToGrid();
                 FindObjectOfType<SpawnBlock>().NewTetromino();
+
+                grounded = true;
                 this.enabled = false;
             }
 
@@ -131,7 +135,7 @@ public class TileControls : MonoBehaviour
     {
         yield return new WaitForSeconds(MTime);
 
-        if (MovingRight)
+        if (MovingRight && grounded == false)
         {
             transform.position += new Vector3(1, 0, 0);
 
@@ -142,7 +146,7 @@ public class TileControls : MonoBehaviour
 
            StartCoroutine(TimeTillMove(PreviousInputTime));
         }
-        else if (MovingLeft)
+        else if (MovingLeft && grounded == false)
         {
             transform.position += new Vector3(-1, 0, 0);
 
@@ -161,6 +165,7 @@ public class TileControls : MonoBehaviour
         {
             int roundedX = Mathf.FloorToInt(children.position.x);
             int roundedY = Mathf.RoundToInt(children.position.y);
+
 
             grid[roundedX, roundedY] = children;
         }
