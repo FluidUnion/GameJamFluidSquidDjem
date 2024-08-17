@@ -5,6 +5,15 @@ using TMPro;
 
 public class UserInterface : MonoBehaviour
 {
+    [SerializeField] int points;
+
+    [SerializeField] string Words;
+    public TMP_Text pointsText;
+
+
+    public GameObject CurrentShape;
+
+    private CheckInShape PS;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +23,10 @@ public class UserInterface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PS = CurrentShape.GetComponent<CheckInShape>();
+
+        points = PS.RemainingSpots;
+
+        pointsText.text = ("Points: " + points.ToString());
     }
 }
