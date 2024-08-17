@@ -51,7 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 0
-  TotalSpots: 10
+  RemainingSpots: 0
+  MaxSpots: 10
   LastCollided: {fileID: 0}
 --- !u!50 &3067722170980224527
 Rigidbody2D:
@@ -302,7 +303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
-  TotalSpots: 0
+  RemainingSpots: 0
+  MaxSpots: 0
   LastCollided: {fileID: 0}
 --- !u!1 &3043783537048331583
 GameObject:
@@ -476,7 +478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
-  TotalSpots: 0
+  RemainingSpots: 0
+  MaxSpots: 0
   LastCollided: {fileID: 0}
 --- !u!1 &4873982009548053953
 GameObject:
@@ -650,7 +653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
-  TotalSpots: 0
+  RemainingSpots: 0
+  MaxSpots: 0
   LastCollided: {fileID: 0}
 --- !u!1 &7267648289751688416
 GameObject:
@@ -824,5 +828,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
-  TotalSpots: 0
+  RemainingSpots: 0
+  MaxSpots: 0
   LastCollided: {fileID: 0}

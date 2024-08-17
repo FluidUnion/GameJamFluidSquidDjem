@@ -532,10 +532,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5216576246841348800, guid: 49e74aa93dbe75b41beb585a29848397, type: 3}
-      propertyPath: MaxSpots
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6078515539073125887, guid: 49e74aa93dbe75b41beb585a29848397, type: 3}
       propertyPath: m_Enabled
       value: 0
