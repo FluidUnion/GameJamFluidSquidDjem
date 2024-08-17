@@ -105,10 +105,10 @@ public class TileControls : MonoBehaviour
                 transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
             }
         }
-        if (!ValidMove())
+        /*else if (!ValidMove())
         {
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, -1), 90);
-        }
+        }*/
     }
     private void FixedUpdate()
     {
@@ -120,8 +120,8 @@ public class TileControls : MonoBehaviour
             {
                 transform.position -= new Vector3(0, -1, 0);
                 AddToGrid();
-                this.enabled = false;
                 FindObjectOfType<SpawnBlock>().NewTetromino();
+                this.enabled = false;
             }
 
             PreviousTime = Time.time;
@@ -140,9 +140,9 @@ public class TileControls : MonoBehaviour
                 transform.position -= new Vector3(1, 0, 0);
             }
 
-            StartCoroutine(TimeTillMove(PreviousInputTime));
+           StartCoroutine(TimeTillMove(PreviousInputTime));
         }
-        if (MovingLeft)
+        else if (MovingLeft)
         {
             transform.position += new Vector3(-1, 0, 0);
 
@@ -151,7 +151,7 @@ public class TileControls : MonoBehaviour
                 transform.position -= new Vector3(-1, 0, 0);
             }
 
-            StartCoroutine(TimeTillMove(PreviousInputTime));
+           StartCoroutine(TimeTillMove(PreviousInputTime));
         }
     }
 
@@ -159,7 +159,7 @@ public class TileControls : MonoBehaviour
     {
         foreach (Transform children in transform)
         {
-            int roundedX = Mathf.RoundToInt(children.position.x);
+            int roundedX = Mathf.FloorToInt(children.position.x);
             int roundedY = Mathf.RoundToInt(children.position.y);
 
             grid[roundedX, roundedY] = children;
@@ -170,10 +170,10 @@ public class TileControls : MonoBehaviour
     {
         foreach (Transform children in transform)
         {
-            int RoundedX = Mathf.RoundToInt(children.transform.position.x);
+            int RoundedX = Mathf.FloorToInt(children.transform.position.x);
             int RoundedY = Mathf.RoundToInt(children.transform.position.y);
 
-            if (RoundedX <0 || RoundedX > width || RoundedY <0 || RoundedY >= height)
+            if (RoundedX <0 || RoundedX >= width || RoundedY <0 || RoundedY >= height)
             {
                 return false;
             }
