@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class TileControls : MonoBehaviour
 {
@@ -11,9 +12,13 @@ public class TileControls : MonoBehaviour
 
     private bool MovingDown;
 
-
     public float PreviousTime;
+    public float PreviousInputTime;
+
     public float FallTime = 0.8f;
+    public float TimeBetween = 0.7f;
+
+    public float ActualTimeBetween;
     //public int speed;
     // Start is called before the first frame update
 
@@ -24,7 +29,13 @@ public class TileControls : MonoBehaviour
         {
             MovingRight = true;
 
+            StartCoroutine(TimeTillMove(PreviousInputTime));
+        }
+        if (context.canceled)
+        {
             MovingRight = false;
+
+            StopCoroutine(TimeTillMove(0f));
         }
     }
     public void OnLeft(InputAction.CallbackContext context)
@@ -32,6 +43,14 @@ public class TileControls : MonoBehaviour
         if (context.started)
         {
             MovingLeft = true;
+
+            StartCoroutine(TimeTillMove(PreviousInputTime));
+        }
+        if (context.canceled)
+        {
+            MovingLeft = false;
+
+            StopCoroutine(TimeTillMove(0f));
         }
     }
     public void OnDown(InputAction.CallbackContext context)
@@ -44,7 +63,7 @@ public class TileControls : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -54,6 +73,7 @@ public class TileControls : MonoBehaviour
         {
             transform.position += new Vector3(1, 0, 0);
         }
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.position += new Vector3(-1, 0, 0);
@@ -65,6 +85,21 @@ public class TileControls : MonoBehaviour
         {
             transform.position += new Vector3(0, -1, 0);
             PreviousTime = Time.time;
+        }
+    }
+    public IEnumerator TimeTillMove(float MTime)
+    {
+        yield return new WaitForSeconds(MTime);
+
+        if (MovingRight)
+        {
+            transform.position += new Vector3(1, 0, 0);
+            StartCoroutine(TimeTillMove(PreviousInputTime));
+        }
+        if (MovingLeft)
+        {
+            transform.position += new Vector3(-1, 0, 0);
+            StartCoroutine(TimeTillMove(PreviousInputTime));
         }
     }
 }
