@@ -25,7 +25,7 @@ public class TileControls : MonoBehaviour
     public static int height = 20;
     public static int width = 10;
 
-    public SpawnBlock SpawnblockScript;
+    public Vector3 rotationPoint;
 
 
     public void OnRight(InputAction.CallbackContext context)
@@ -84,7 +84,7 @@ public class TileControls : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A))
         {
             transform.position += new Vector3(-1, 0, 0);
 
@@ -93,6 +93,18 @@ public class TileControls : MonoBehaviour
             {
                 transform.position -= new Vector3(-1, 0, 0);
             }
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(ValidMove())
+            {
+                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+            }
+        }
+        if (!ValidMove())
+        {
+            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, -1), 90);
         }
     }
     private void FixedUpdate()
