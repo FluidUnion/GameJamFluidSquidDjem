@@ -25,6 +25,8 @@ public class TileControls : MonoBehaviour
     public static int height = 20;
     public static int width = 10;
 
+    public SpawnBlock SpawnblockScript;
+
 
     public void OnRight(InputAction.CallbackContext context)
     {
@@ -114,11 +116,23 @@ public class TileControls : MonoBehaviour
         if (MovingRight)
         {
             transform.position += new Vector3(1, 0, 0);
+
+            if (!ValidMove())
+            {
+                transform.position -= new Vector3(1, 0, 0);
+            }
+
             StartCoroutine(TimeTillMove(PreviousInputTime));
         }
         if (MovingLeft)
         {
             transform.position += new Vector3(-1, 0, 0);
+
+            if (!ValidMove())
+            {
+                transform.position -= new Vector3(-1, 0, 0);
+            }
+
             StartCoroutine(TimeTillMove(PreviousInputTime));
         }
     }
