@@ -27,6 +27,8 @@ public class TileControls : MonoBehaviour
 
     public Vector3 rotationPoint;
 
+    private static Transform[,] grid = new Transform[width, height];
+
 
     public void OnRight(InputAction.CallbackContext context)
     {
@@ -97,7 +99,8 @@ public class TileControls : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(ValidMove())
+            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
+            if(!ValidMove())
             {
                 transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
             }
@@ -116,6 +119,9 @@ public class TileControls : MonoBehaviour
             if (!ValidMove())
             {
                 transform.position -= new Vector3(0, -1, 0);
+                AddToGrid();
+                this.enabled = false;
+                FindObjectOfType<SpawnBlock>().NewTetromino();
             }
 
             PreviousTime = Time.time;
@@ -148,6 +154,18 @@ public class TileControls : MonoBehaviour
             StartCoroutine(TimeTillMove(PreviousInputTime));
         }
     }
+
+    void AddToGrid()
+    {
+        foreach (Transform children in transform)
+        {
+            int roundedX = Mathf.RoundToInt(children.position.x);
+            int roundedY = Mathf.RoundToInt(children.position.y);
+
+            grid[roundedX, roundedY] = children;
+        }
+    }
+
     bool ValidMove()
     {
         foreach (Transform children in transform)
@@ -159,6 +177,9 @@ public class TileControls : MonoBehaviour
             {
                 return false;
             }
+
+            if (grid[RoundedX, RoundedY] != null)
+                return false;
         }
         return true;
     }

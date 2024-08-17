@@ -4,35 +4,15 @@ using UnityEngine;
 
 public class SpawnBlock : MonoBehaviour
 {
-    public List<GameObject> objectsToSpawn;
-    public Transform spawnPoint;
+    public GameObject[] Tetrominoes;
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SpawnRandomObject();
-        }
+        NewTetromino();
     }
 
-    void SpawnRandomObject()
+    public void NewTetromino()
     {
-        if (objectsToSpawn.Count == 0)
-        {
-            Debug.LogWarning("No objects to spawn!");
-            return;
-        }
-
-        if (spawnPoint == null)
-        {
-            Debug.LogWarning("No spawn point set!");
-            return;
-        }
-
-        int randomIndex = Random.Range(0, objectsToSpawn.Count);
-
-        GameObject selectedObject = objectsToSpawn[randomIndex];
-
-        Instantiate(selectedObject, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(Tetrominoes[Random.Range(0, Tetrominoes.Length)], transform.position, Quaternion.identity);
     }
 }

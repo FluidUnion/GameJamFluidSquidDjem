@@ -308,8 +308,8 @@ Transform:
   m_GameObject: {fileID: 1400145599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 9.5, z: 0}
-  m_LocalScale: {x: 11, y: 20, z: 1}
+  m_LocalPosition: {x: 4.5, y: 9.5, z: 0}
+  m_LocalScale: {x: 10, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -343,12 +343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c837e902b18ab49a3023206db02da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - {fileID: 3350794708021911853, guid: 86657e314c5f78646b2bdf121df56cad, type: 3}
-  - {fileID: 3350794708021911853, guid: 78f9ce68626991d41a631bda72b7fa5c, type: 3}
-  - {fileID: 3350794708021911853, guid: 2073735bcd752f9458434ffa1c5d2ddb, type: 3}
-  - {fileID: 3350794708021911853, guid: 0ad9da1632fcac2449e5a18b19537e17, type: 3}
-  spawnPoint: {fileID: 8550305478916410892}
+  Tetrominoes:
+  - {fileID: 936808771851125884, guid: 9d7fa012c14d5eb4d83a189d6719ffa9, type: 3}
+  - {fileID: 1265991009329851008, guid: 07abc7962b636864ca7735555b5ecc77, type: 3}
+  - {fileID: 4326272700504363876, guid: ad88bb1f1a770c444aaeb7b5b74ba63e, type: 3}
+  - {fileID: 3840784240607894626, guid: c7775e35259d12444a8737708e1c01bf, type: 3}
+  - {fileID: 5175635039564028351, guid: 2fce84b41d4867a49bfa6e769810ec79, type: 3}
+  - {fileID: 8937893114543827560, guid: 9e57d29e22615d549a8b1c688c32bb13, type: 3}
 --- !u!4 &8550305478916410892
 Transform:
   m_ObjectHideFlags: 0
@@ -358,7 +359,7 @@ Transform:
   m_GameObject: {fileID: 4820620418238755599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 19, z: 0}
+  m_LocalPosition: {x: 4, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
