@@ -21,8 +21,6 @@ public class TileControls : MonoBehaviour
     public float TimeBetween = 0.7f;
 
     public float ActualTimeBetween;
-    //public int speed;
-    // Start is called before the first frame update
 
     public static int height = 20;
     public static int width = 10;
@@ -104,13 +102,10 @@ public class TileControls : MonoBehaviour
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
             if(!ValidMove())
             {
+                Debug.Log("nu uh");
                 transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
             }
         }
-        /*else if (!ValidMove())
-        {
-            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, -1), 90);
-        }*/
     }
     private void FixedUpdate()
     {
@@ -163,7 +158,7 @@ public class TileControls : MonoBehaviour
     {
         foreach (Transform children in transform)
         {
-            int roundedX = Mathf.FloorToInt(children.position.x);
+            int roundedX = Mathf.RoundToInt(children.position.x);
             int roundedY = Mathf.RoundToInt(children.position.y);
 
 
@@ -175,7 +170,7 @@ public class TileControls : MonoBehaviour
     {
         foreach (Transform children in transform)
         {
-            int RoundedX = Mathf.FloorToInt(children.transform.position.x);
+            int RoundedX = Mathf.RoundToInt(children.transform.position.x);
             int RoundedY = Mathf.RoundToInt(children.transform.position.y);
 
             if (RoundedX <0 || RoundedX >= width || RoundedY <0 || RoundedY >= height)
