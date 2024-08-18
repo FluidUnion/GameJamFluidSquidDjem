@@ -71,19 +71,29 @@ public class TileControls : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (!ValidMove())
+        {
+            if (BlockRight)
+            {
+                transform.position -= new Vector3(1, 0, 0);
+            }
+            if (BlockLeft)
+            {
+                transform.position += new Vector3(1, 0, 0);
+            }
+            if (!BlockLeft && !BlockRight)
+            {
+                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+            }
+        }
         if (Input.GetKeyDown(KeyCode.D) && grounded == false)
         {
             transform.position += new Vector3(1, 0, 0);
 
-            if(!ValidMove())
+            if (!ValidMove())
             {
                 transform.position -= new Vector3(1, 0, 0);
             }
@@ -99,29 +109,9 @@ public class TileControls : MonoBehaviour
                 transform.position -= new Vector3(-1, 0, 0);
             }
         }
-        ///fix rotation
         else if (Input.GetKeyDown(KeyCode.Q) && grounded == false)
         {
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-            if(!ValidMove())
-            {
-                Debug.Log("nu uh");
-                //if (BlockRight)
-                {
-                    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
-                }
-
-
-                if (BlockLeft)
-                {
-                    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-
-                    if (!ValidMove())
-                    {
-                        transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
-                    }
-                }
-            }
         }
     }
     private void FixedUpdate()

@@ -336,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 109304754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.099, y: 10.436526, z: 0}
+  m_LocalPosition: {x: -1, y: 10.436526, z: 0}
   m_LocalScale: {x: 1, y: 22.13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1148,6 +1148,8 @@ MonoBehaviour:
   CheckShape: {fileID: 1107419073}
   CurrentShape: {fileID: 1107419070}
   NewParent: {fileID: 962330289}
+  DisableOnZoomOut: []
+  EnableOnZoomOut: []
 --- !u!4 &1121934037
 Transform:
   m_ObjectHideFlags: 0
@@ -1369,6 +1371,10 @@ PrefabInstance:
       value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
+      propertyPath: CanSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
       propertyPath: Tetrominoes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1379,21 +1385,25 @@ PrefabInstance:
     - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
       propertyPath: Tetrominoes.Array.data[1]
       value: 
-      objectReference: {fileID: 8937893114543827560, guid: 9e57d29e22615d549a8b1c688c32bb13, type: 3}
+      objectReference: {fileID: 4326272700504363876, guid: ad88bb1f1a770c444aaeb7b5b74ba63e, type: 3}
     - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
       propertyPath: Tetrominoes.Array.data[2]
       value: 
-      objectReference: {fileID: 8937893114543827560, guid: 9e57d29e22615d549a8b1c688c32bb13, type: 3}
+      objectReference: {fileID: 3840784240607894626, guid: c7775e35259d12444a8737708e1c01bf, type: 3}
     - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
       propertyPath: Tetrominoes.Array.data[3]
       value: 
-      objectReference: {fileID: 8937893114543827560, guid: 9e57d29e22615d549a8b1c688c32bb13, type: 3}
+      objectReference: {fileID: 5175635039564028351, guid: 2fce84b41d4867a49bfa6e769810ec79, type: 3}
     - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
       propertyPath: Tetrominoes.Array.data[4]
       value: 
       objectReference: {fileID: 8937893114543827560, guid: 9e57d29e22615d549a8b1c688c32bb13, type: 3}
     - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
       propertyPath: Tetrominoes.Array.data[5]
+      value: 
+      objectReference: {fileID: 8937893114543827560, guid: 9e57d29e22615d549a8b1c688c32bb13, type: 3}
+    - target: {fileID: 4638287064196184697, guid: 92e71f086ba69094fb1c8599698f6e24, type: 3}
+      propertyPath: Tetrominoes.Array.data[6]
       value: 
       objectReference: {fileID: 8937893114543827560, guid: 9e57d29e22615d549a8b1c688c32bb13, type: 3}
     m_RemovedComponents: []
@@ -1761,7 +1771,7 @@ Transform:
   m_GameObject: {fileID: 1983194094}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.21, y: 10.436526, z: 0}
+  m_LocalPosition: {x: 10, y: 10.436526, z: 0}
   m_LocalScale: {x: 1, y: 22.13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
