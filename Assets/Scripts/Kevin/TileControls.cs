@@ -88,6 +88,10 @@ public class TileControls : MonoBehaviour
             {
                 transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
             }
+            if (BlockLeft && BlockLeft)
+            {
+                transform.rotation = transform.rotation;
+            }
         }
         if (Input.GetKeyDown(KeyCode.D) && grounded == false)
         {

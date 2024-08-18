@@ -14,6 +14,8 @@ public class ClumpTogether : MonoBehaviour
 
     private bool isFilledCheck = true;
 
+    private List<GameObject> OutOfShape = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,11 @@ public class ClumpTogether : MonoBehaviour
         FindObjectOfType<SpawnBlock>().CanSpawn = false;
         StartCoroutine(AfterZoomOut());
         FindObjectOfType<CameraZoom>().ZoomOut();
+
+        foreach (GameObject i in CheckShape.InShape)
+        {
+            i.transform.SetParent(NewParent.transform);
+        }
     }
 
     IEnumerator AfterZoomOut()
