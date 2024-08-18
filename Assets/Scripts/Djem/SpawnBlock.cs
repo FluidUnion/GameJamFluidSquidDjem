@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class SpawnBlock : MonoBehaviour
 {
+    GameObject lastInstantiatedObject;
     public GameObject[] Tetrominoes;
+    public bool CanSpawn = true;
 
     private void Start()
     {
         NewTetromino();
     }
 
+    private void Update()
+    {
+        if (!CanSpawn)
+        {
+            Destroy(lastInstantiatedObject);
+        }
+    }
+
     public void NewTetromino()
     {
-        Instantiate(Tetrominoes[Random.Range(0, Tetrominoes.Length)], transform.position, Quaternion.identity);
+        if(CanSpawn)
+        {
+            lastInstantiatedObject = Instantiate(Tetrominoes[Random.Range(0, Tetrominoes.Length)], transform.position, Quaternion.identity);
+        }
     }
 }

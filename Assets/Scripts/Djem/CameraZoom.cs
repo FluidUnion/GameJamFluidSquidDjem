@@ -9,16 +9,13 @@ public class CameraZoom : MonoBehaviour
     public float zoomSpeed = 2f;
     private Camera cam;
 
-    void Update()
+    public void ZoomIn()
     {
-        if (Input.GetKeyDown(KeyCode.Z)) // Zoom in
-        {
-            ZoomTo(ZoomInSize);
-        }
-        if (Input.GetKeyDown(KeyCode.X)) // Zoom out
-        {
-            ZoomTo(ZoomOutSize);
-        }
+        ZoomTo(ZoomInSize);
+    }
+    public void ZoomOut()
+    {
+        ZoomTo(ZoomOutSize);
     }
 
     private void Start()
