@@ -1,0 +1,34 @@
+{
+    "name": "Reset",
+    "maps": [
+        {
+            "name": "Reset",
+            "id": "29c86640-1c6b-48a9-87c9-1d5780da9c01",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "ad55b04a-55e9-4547-b37a-fbffb36fdea9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f57ea00f-8f71-46bf-a44e-a3f3d63f664e",
+                    "path": "<Keyboard>/#(R)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
