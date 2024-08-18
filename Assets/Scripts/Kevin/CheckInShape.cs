@@ -25,10 +25,9 @@ public class CheckInShape : MonoBehaviour
         percentage = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        Debug.Log(InShape.Count);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

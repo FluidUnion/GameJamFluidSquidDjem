@@ -8,6 +8,8 @@ public class SpawnBlock : MonoBehaviour
     public GameObject[] Tetrominoes;
     public bool CanSpawn = true;
 
+    public List<GameObject> instantiatedObjects = new List<GameObject>();
+
     private void Start()
     {
         NewTetromino();
@@ -23,9 +25,10 @@ public class SpawnBlock : MonoBehaviour
 
     public void NewTetromino()
     {
-        if(CanSpawn)
+        if (CanSpawn)
         {
             lastInstantiatedObject = Instantiate(Tetrominoes[Random.Range(0, Tetrominoes.Length)], transform.position, Quaternion.identity);
+            instantiatedObjects.Add(lastInstantiatedObject);
         }
     }
 }
