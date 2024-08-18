@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 727949101530964894}
   - component: {fileID: 7591367118711315269}
   - component: {fileID: 3283467925411652369}
-  - component: {fileID: -4694363941044820895}
+  - component: {fileID: -8389851424894206251}
   m_Layer: 0
   m_Name: U-Tetromino
   m_TagString: MainTetromino
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_DefaultActionMap: tetromino
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!61 &-4694363941044820895
+--- !u!61 &-8389851424894206251
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

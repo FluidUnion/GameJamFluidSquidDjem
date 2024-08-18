@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 868892670289064451}
   - component: {fileID: 7796762974898225781}
   - component: {fileID: 2856874738669159341}
-  - component: {fileID: -3194284006317220925}
+  - component: {fileID: 6737624045173243377}
   m_Layer: 0
   m_Name: Line-Tetromino
   m_TagString: MainTetromino
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_DefaultActionMap: tetromino
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!61 &-3194284006317220925
+--- !u!61 &6737624045173243377
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,7 +301,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.4937749, y: 0.004617691}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -312,7 +312,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.94765, y: 0.95382404}
   m_EdgeRadius: 0
 --- !u!1 &5710460661014375311
 GameObject:
@@ -691,7 +691,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.4966071, y: 0.00000023841858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -702,5 +702,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.9819293, y: 0.9815297}
   m_EdgeRadius: 0
