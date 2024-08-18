@@ -99,21 +99,16 @@ public class TileControls : MonoBehaviour
                 transform.position -= new Vector3(-1, 0, 0);
             }
         }
-
+        ///fix rotation
         else if (Input.GetKeyDown(KeyCode.Q) && grounded == false)
         {
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-            //if(!ValidMove())
+            if(!ValidMove())
             {
                 Debug.Log("nu uh");
-                if (BlockRight)
+                //if (BlockRight)
                 {
                     transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
-
-                    if (!ValidMove())
-                    {
-                        transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-                    }
                 }
 
 
@@ -217,6 +212,7 @@ public class TileControls : MonoBehaviour
             BlockLeft = true;
         }
     }
+    ///fix rotation
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("RightBlockade"))
