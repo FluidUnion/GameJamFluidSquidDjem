@@ -10,6 +10,8 @@ public class UserInterface : MonoBehaviour
     [SerializeField] string Words;
     public TMP_Text pointsText;
 
+    public TMP_Text ProgressText;
+    public float ProgressFloat;
 
     public GameObject CurrentShape;
 
@@ -28,5 +30,9 @@ public class UserInterface : MonoBehaviour
         points = PS.RemainingSpots;
 
         pointsText.text = ("Points: " + points.ToString());
+
+        ProgressFloat = PS.percentage;
+
+        ProgressText.text = ((int)ProgressFloat + "%");
     }
 }
