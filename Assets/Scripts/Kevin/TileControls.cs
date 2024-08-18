@@ -7,6 +7,9 @@ using System;
 public class TileControls : MonoBehaviour
 {
 
+    private bool BlockRight;
+    private bool BlockLeft;
+
     private bool MovingRight;
     private bool MovingLeft;
 
@@ -100,10 +103,29 @@ public class TileControls : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Q) && grounded == false)
         {
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-            if(!ValidMove())
+            //if(!ValidMove())
             {
                 Debug.Log("nu uh");
-                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+                if (BlockRight)
+                {
+                    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+
+                    if (!ValidMove())
+                    {
+                        transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
+                    }
+                }
+
+
+                if (BlockLeft)
+                {
+                    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
+
+                    if (!ValidMove())
+                    {
+                        transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+                    }
+                }
             }
         }
     }
@@ -182,5 +204,29 @@ public class TileControls : MonoBehaviour
                 return false;
         }
         return true;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("RightBlockade"))
+        {
+            BlockRight = true;
+        }
+
+        if(collision.gameObject.CompareTag("LeftBlockade"))
+        {
+            BlockLeft = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("RightBlockade"))
+        {
+            BlockRight = false;
+        }
+
+        if (collision.gameObject.CompareTag("LeftBlockade"))
+        {
+            BlockLeft = false;
+        }
     }
 }

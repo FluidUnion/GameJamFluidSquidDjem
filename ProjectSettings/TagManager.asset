@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Cubicle
   - MainTetromino
+  - LeftBlockade
+  - RightBlockade
   layers:
   - Default
   - TransparentFX
