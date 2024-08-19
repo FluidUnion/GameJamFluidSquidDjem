@@ -27,9 +27,9 @@ public class TileControls : MonoBehaviour
 
     public Vector3 rotationPoint;
 
-    public static int height = 20;
-    public static int width =  15;
-    private Transform[,] grid = new Transform[width, height];
+    private static int height = 20;
+    private static int width =  15;
+    private static Transform[,] grid = new Transform[width, height];
     
 
     public void OnRight(InputAction.CallbackContext context)
