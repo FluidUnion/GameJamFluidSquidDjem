@@ -9,7 +9,6 @@ public class Menu_bgm : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        PlayMusic();
     }
 
     public void PlayMusic()
@@ -34,6 +33,14 @@ public class Menu_bgm : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            PlayMusic();
         }
     }
 }

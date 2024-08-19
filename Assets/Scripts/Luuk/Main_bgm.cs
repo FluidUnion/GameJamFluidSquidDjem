@@ -10,7 +10,6 @@ public class Main_bgm : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
-        PlayMusic();
     }
 
     public void PlayMusic()

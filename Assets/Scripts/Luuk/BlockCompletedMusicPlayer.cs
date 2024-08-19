@@ -9,7 +9,6 @@ public class BlockCompletedMPlayer : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        PlayMusic();
     }
 
     public void PlayMusic()
