@@ -9,7 +9,6 @@ public class Menu_bgm : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(gameObject);
         PlayMusic();
     }
 
