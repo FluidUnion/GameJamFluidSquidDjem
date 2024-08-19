@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86.Avx;
+using UnityEngine.SceneManagement;
 
 public class ClumpTogether : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class ClumpTogether : MonoBehaviour
 
     private bool isFilledCheck = true;
 
+    [SerializeField] private SizeSO NewSize;
+    [SerializeField] private ClumpSO SaveClump;
+
+    [SerializeField] private string NextScene;
+
     // Update is called once per frame
     void Update()
     {
@@ -33,7 +39,6 @@ public class ClumpTogether : MonoBehaviour
                 {
                     SpawnblockScript.instantiatedObjects.Remove(obj);
                 }
-
                 StartCoroutine(DeleteChildrenWithDelay());
 
                 isFilledCheck = false;
@@ -42,6 +47,7 @@ public class ClumpTogether : MonoBehaviour
             {
                 i.transform.SetParent(NewParent.transform);
             }
+            SaveClump.SavedShape = NewParent;
         }
     }
     private IEnumerator DeleteChildrenWithDelay()

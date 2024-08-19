@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
-public class TileControls : MonoBehaviour
+public class TileControlsBig : MonoBehaviour
 {
 
     private bool BlockRight;
@@ -27,8 +27,8 @@ public class TileControls : MonoBehaviour
 
     public Vector3 rotationPoint;
 
-    public static int height = 20;
-    public static int width =  15;
+    public static int height = 30;
+    public static int width =  45;
     private Transform[,] grid = new Transform[width, height];
     
 

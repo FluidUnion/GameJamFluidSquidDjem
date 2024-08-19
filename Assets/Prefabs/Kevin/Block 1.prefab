@@ -142,8 +142,9 @@ GameObject:
   - component: {fileID: 4253085470820042315}
   - component: {fileID: 6642254349594037147}
   - component: {fileID: -564030847269901802}
+  - component: {fileID: 384286963930077959}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block 1
   m_TagString: MainTetromino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +188,6 @@ MonoBehaviour:
   TimeBetween: 1
   ActualTimeBetween: 0.2
   rotationPoint: {x: 0.5, y: 0.5, z: 0}
-  GetSizeSO: {fileID: 11400000, guid: a67a4e26202eccc46a3588bd239fa4e0, type: 2}
 --- !u!114 &6642254349594037147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +315,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.002983, y: 2.002983}
   m_EdgeRadius: 0
+--- !u!114 &384286963930077959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936808771851125884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0e7f901a70da4ba14b4cb5caedb87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grounded: 0
+  PreviousTime: 0
+  PreviousInputTime: 0.15
+  FallTime: 0.8
+  TimeBetween: 1
+  ActualTimeBetween: 0.2
+  rotationPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &1385997789404559703
 GameObject:
   m_ObjectHideFlags: 0
