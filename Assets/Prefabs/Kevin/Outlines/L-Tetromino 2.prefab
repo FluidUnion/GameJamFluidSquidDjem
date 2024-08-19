@@ -172,6 +172,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
+  RemainingSpots: 0
+  MaxSpots: 0
+  LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
+  percentage: 0
+  InShape: []
 --- !u!1 &3570920905778830785
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 3570920905778830785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: -1, z: 0}
+  m_LocalPosition: {x: 0.22, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -379,6 +385,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
+  RemainingSpots: 0
+  MaxSpots: 0
+  LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
+  percentage: 0
+  InShape: []
 --- !u!1 &8434958901254782363
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +563,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
+  RemainingSpots: 0
+  MaxSpots: 0
+  LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
+  percentage: 0
+  InShape: []
 --- !u!1 &8619586924542195701
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,3 +741,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilledCubes: 10
+  RemainingSpots: 0
+  MaxSpots: 0
+  LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
+  percentage: 0
+  InShape: []

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2718057752568455405}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.25, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53,7 +53,9 @@ MonoBehaviour:
   RemainingSpots: 36
   MaxSpots: 36
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
 --- !u!50 &3067722170980224527
 Rigidbody2D:
   serializedVersion: 4
@@ -256,7 +258,9 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
 --- !u!1 &3043783537048331583
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +436,9 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
 --- !u!1 &4873982009548053953
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +614,9 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
 --- !u!1 &7267648289751688416
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,4 +792,6 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []

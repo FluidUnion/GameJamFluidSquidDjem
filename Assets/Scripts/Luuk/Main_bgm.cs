@@ -43,4 +43,11 @@ public class Main_bgm : MonoBehaviour
             audioSource.Stop();
         }
     }
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            PlayMusic();
+        }
+    }
 }

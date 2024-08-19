@@ -36,11 +36,4 @@ public class Menu_bgm : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            PlayMusic();
-        }
-    }
 }
