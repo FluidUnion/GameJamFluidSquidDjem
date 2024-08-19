@@ -24,6 +24,11 @@ public class ClumpTogether : MonoBehaviour
 
     [SerializeField] private string NextScene;
 
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(NewParent);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -47,7 +52,7 @@ public class ClumpTogether : MonoBehaviour
             {
                 i.transform.SetParent(NewParent.transform);
             }
-            SaveClump.SavedShape = NewParent;
+            SceneManager.LoadScene("SecondMainScene");
         }
     }
     private IEnumerator DeleteChildrenWithDelay()

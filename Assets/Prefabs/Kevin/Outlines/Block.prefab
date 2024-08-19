@@ -53,7 +53,9 @@ MonoBehaviour:
   RemainingSpots: 36
   MaxSpots: 36
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 80
   percentage: 0
+  InShape: []
 --- !u!50 &3067722170980224527
 Rigidbody2D:
   serializedVersion: 4
@@ -256,7 +258,9 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
 --- !u!1 &3043783537048331583
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +436,9 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
 --- !u!1 &4873982009548053953
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +614,9 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
 --- !u!1 &7267648289751688416
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,4 +792,6 @@ MonoBehaviour:
   RemainingSpots: 0
   MaxSpots: 0
   LastCollided: {fileID: 0}
+  CurrentlyNeededPercent: 0
   percentage: 0
+  InShape: []
