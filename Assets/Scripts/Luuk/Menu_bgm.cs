@@ -9,7 +9,6 @@ public class Menu_bgm : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        PlayMusic();
     }
 
     public void PlayMusic()
@@ -36,4 +35,5 @@ public class Menu_bgm : MonoBehaviour
             audioSource.Stop();
         }
     }
+
 }

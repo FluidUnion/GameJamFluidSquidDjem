@@ -10,7 +10,6 @@ public class Main_bgm : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
-        PlayMusic();
     }
 
     public void PlayMusic()
@@ -42,6 +41,13 @@ public class Main_bgm : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
+        }
+    }
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            PlayMusic();
         }
     }
 }
