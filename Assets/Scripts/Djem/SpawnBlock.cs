@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnBlock : MonoBehaviour
 {
@@ -10,9 +11,26 @@ public class SpawnBlock : MonoBehaviour
 
     public List<GameObject> instantiatedObjects = new List<GameObject>();
 
+    private ClumpTogether LastClump = new ClumpTogether();
+
+    private Scene CurrentScene;
+
+    private GameObject Clump;
+
     private void Start()
     {
-        NewTetromino();
+        //CurrentScene = SceneManager.GetActiveScene();
+
+        //Clump = LastClump.NewParent;
+
+        //if (CurrentScene.name == "SecondMainScene")
+        //{
+            //Instantiate<GameObject>(Clump);
+        //}
+        //else
+        //{
+            NewTetromino();
+        //}
     }
 
     private void Update()
